@@ -9,15 +9,16 @@ import UIKit
 import AlamofireImage
 
 @available(iOS 9.0, *)
-public class Node: UIView {
+class Node: UIView {
     private let imageView = UIImageView()
     private let infoLabel = UILabel()
     private let maskImageView = UIImageView()
     
+    var collisionCount: Int = 0
     var delegate: NodeDelegate?
     var targetInfo: TargetInfo?
     var index: Int = 0
-    public var type: NodeType = NodeType.action
+    var type: NodeType = NodeType.action
     var lineWidth: CGFloat = 3
     
     var fillColor: UIColor = UIColor.red.withAlphaComponent(0.5) {
@@ -29,6 +30,13 @@ public class Node: UIView {
         didSet{
             layer.borderColor = strokeColor.cgColor
         }
+    }
+    
+    func increaseCollisionCount(){
+        print(self.targetInfo?.name)
+        print(self.collisionCount)
+        collisionCount += 1
+        setLabelText(text: "\(collisionCount)", font: UIFont.boldSystemFont(ofSize: 18))
     }
     
     convenience init(frame: CGRect, targetInfo: TargetInfo?,type: NodeType, index: Int) {
@@ -54,7 +62,7 @@ public class Node: UIView {
         layer.borderColor = strokeColor.cgColor
     }
     
-    required public init?(coder aDecoder: NSCoder) {
+    required init?(coder aDecoder: NSCoder) {
         fatalError("init(coder:) has not been implemented")
     }
     
@@ -62,7 +70,7 @@ public class Node: UIView {
         self.infoLabel.alpha = fraction
     }
     
-    func setLabelText(text: String, font: UIFont = UIFont.boldSystemFont(ofSize: 14), color: UIColor = .white){
+    func setLabelText(text: String, font: UIFont = UIFont.boldSystemFont(ofSize: 12), color: UIColor = .white){
         infoLabel.text = text
         infoLabel.font = font
         infoLabel.textColor = color
@@ -130,7 +138,7 @@ public class Node: UIView {
         return UIBezierPath(arcCenter: center, radius: radius, startAngle: 0, endAngle: .pi * 2, clockwise: true)
     }
     
-    override public var collisionBoundsType: UIDynamicItemCollisionBoundsType { return .path }
+    override var collisionBoundsType: UIDynamicItemCollisionBoundsType { return .path }
     
-    override public var collisionBoundingPath: UIBezierPath { return circularPath() }
+    override var collisionBoundingPath: UIBezierPath { return circularPath() }
 }

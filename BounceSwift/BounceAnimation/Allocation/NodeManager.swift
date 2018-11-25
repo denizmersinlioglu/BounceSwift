@@ -7,15 +7,15 @@
 
 import UIKit
 
-public class NodeManager{
+class NodeManager{
     
-    public var targetInfo: [TargetInfo]!
-    public var colorScheme: ColorScheme!
-    public var diameter: CGFloat = 80
+    var targetInfo: [TargetInfo]!
+    var colorScheme: ColorScheme!
+    var diameter: CGFloat = 80
     let hCenter = UIScreen.main.bounds.width/2
     let vCenter = UIScreen.main.bounds.height/2
 
-    public init(targetInfo: [TargetInfo], colorScheme: ColorScheme){
+    init(targetInfo: [TargetInfo], colorScheme: ColorScheme){
         self.targetInfo = targetInfo
         self.colorScheme = colorScheme
     }

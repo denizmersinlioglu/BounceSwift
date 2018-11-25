@@ -8,11 +8,11 @@
 import UIKit
 
 @available(iOS 9.0, *)
-public class TargetListViewController: UIViewController, UITableViewDataSource, UITableViewDelegate, UIGestureRecognizerDelegate {
+class TargetListViewController: UIViewController, UITableViewDataSource, UITableViewDelegate, UIGestureRecognizerDelegate {
     
     let cellId = "cellId"
-    public var buttonColor: UIColor = .blue
-    public var targetInfoArray = [TargetInfo]() {
+    var buttonColor: UIColor = .blue
+    var targetInfoArray = [TargetInfo]() {
         didSet {
             tableView.reloadData()
         }
@@ -33,7 +33,7 @@ public class TargetListViewController: UIViewController, UITableViewDataSource, 
         return tv
     }()
    
-    override public func viewDidLoad() {
+    override func viewDidLoad() {
         super.viewDidLoad()
         let tapGesture = UITapGestureRecognizer(target: self, action: #selector(outsideTap))
         tapGesture.delegate = self
@@ -72,7 +72,7 @@ public class TargetListViewController: UIViewController, UITableViewDataSource, 
         tableView.rightAnchor.constraint(equalTo: view.rightAnchor, constant: -constraintWidth).isActive = true
     }
     
-    public func gestureRecognizer(_ gestureRecognizer: UIGestureRecognizer, shouldReceive touch: UITouch) -> Bool {
+    func gestureRecognizer(_ gestureRecognizer: UIGestureRecognizer, shouldReceive touch: UITouch) -> Bool {
         return touch.view == gestureRecognizer.view
     }
     
@@ -84,29 +84,29 @@ public class TargetListViewController: UIViewController, UITableViewDataSource, 
         dismiss(animated: true, completion: nil)
     }
     
-    public func tableView(_ tableView: UITableView, heightForHeaderInSection section: Int) -> CGFloat {
+    func tableView(_ tableView: UITableView, heightForHeaderInSection section: Int) -> CGFloat {
         return 1
     }
-    public func tableView(_ tableView: UITableView, heightForRowAt indexPath: IndexPath) -> CGFloat {
+    func tableView(_ tableView: UITableView, heightForRowAt indexPath: IndexPath) -> CGFloat {
         return 68
     }
     
-    public func tableView(_ tableView: UITableView, numberOfRowsInSection section: Int) -> Int {
+    func tableView(_ tableView: UITableView, numberOfRowsInSection section: Int) -> Int {
         return targetInfoArray.count
     }
     
-    public func tableView(_ tableView: UITableView, cellForRowAt indexPath: IndexPath) -> UITableViewCell {
+    func tableView(_ tableView: UITableView, cellForRowAt indexPath: IndexPath) -> UITableViewCell {
         let cell = tableView.dequeueReusableCell(withIdentifier: cellId, for: indexPath) as? TargetListCell
         cell!.targetInfo = targetInfoArray[indexPath.row]
         return cell!
     }
     
-    override public var modalTransitionStyle: UIModalTransitionStyle{
+    override var modalTransitionStyle: UIModalTransitionStyle{
         get { return .crossDissolve }
         set { super.modalTransitionStyle = newValue }
     }
     
-    override public var modalPresentationStyle: UIModalPresentationStyle{
+    override var modalPresentationStyle: UIModalPresentationStyle{
         get { return .overCurrentContext }
         set { super.modalPresentationStyle = newValue }
     }

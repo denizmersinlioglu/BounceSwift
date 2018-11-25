@@ -8,13 +8,13 @@
 import UIKit
 
 @available(iOS 9.0, *)
-public struct TargetInfo {
-    public var name: String
-    public var image: UIImage?
-    public var imageURL: String?
-    public var info: String
+struct TargetInfo {
+    var name: String
+    var image: UIImage?
+    var imageURL: String?
+    var info: String
     
-    public init(name: String, info: String, image: UIImage? = nil, imageURL: String? = nil) {
+    init(name: String, info: String, image: UIImage? = nil, imageURL: String? = nil) {
         self.name = name
         self.image = image
         self.imageURL = imageURL
@@ -23,12 +23,12 @@ public struct TargetInfo {
 }
 
 @available(iOS 9.0, *)
-public enum NodeType{
+enum NodeType{
     case target
     case action
 }
 
 @available(iOS 9.0, *)
-public protocol NodeDelegate{
+protocol NodeDelegate{
     func nodeTapped(to node: Node)
 }

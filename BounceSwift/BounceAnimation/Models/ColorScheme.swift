@@ -7,7 +7,7 @@
 
 import UIKit
 
-public struct ColorScheme{
+struct ColorScheme{
     var backgroundFillColor:UIColor
     var foregroundFillColor:UIColor
     var actionNodeFillColor:UIColor
@@ -16,7 +16,7 @@ public struct ColorScheme{
     var targetNodeStrokeColor:UIColor
     var targetNodeTextColor:UIColor
     
-   public init(backgroundFillColor:UIColor = .clear,
+   init(backgroundFillColor:UIColor = .clear,
          foregroundFillColor:UIColor = .lightGray,
          actionNodeFillColor:UIColor = .darkGray,
          actionNodeStrokeColor:UIColor = .white,

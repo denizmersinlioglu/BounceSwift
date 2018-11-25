@@ -15,7 +15,7 @@ struct SunflowerPointGenerator: PointGenerator {
         return points
     }
     
-    public func sunflower(numPoints: Int, alpha: Float) -> [CGPoint] {
+    func sunflower(numPoints: Int, alpha: Float) -> [CGPoint] {
         var points = [CGPoint]()
         let b = roundf(alpha * sqrtf(Float(numPoints))) // number of boundary points
         for k in 1...numPoints {
@@ -28,7 +28,7 @@ struct SunflowerPointGenerator: PointGenerator {
         return points
     }
     
-    public func radius(k: Float, n: Float, b: Float) -> Float {
+    func radius(k: Float, n: Float, b: Float) -> Float {
         var r: Float = 0.0
         if k > n - b {
             r = 1.0

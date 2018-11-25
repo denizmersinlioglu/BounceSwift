@@ -13,10 +13,10 @@ class BounceAnimationViewController: UIViewController, BounceAnimationDelegate{
     let targetInfo : [TargetInfo] = [TargetInfo(name: "Rihanna", info: "\(309.34)", image: #imageLiteral(resourceName: "rihanna")),
                                      TargetInfo(name: "Leonardo", info: "\(23)", image: #imageLiteral(resourceName: "dicaprio")),
                                      TargetInfo(name: "Orlando", info: "\(332.24)", image: #imageLiteral(resourceName: "orlando")),
-                                     TargetInfo(name: "Deniz", info: "\(332.24)", image: #imageLiteral(resourceName: "icon_contactbook")),
-                                     TargetInfo(name: "Deniz", info: "\(332.24)", image: #imageLiteral(resourceName: "icon_contactbook")),
-                                     TargetInfo(name: "Deniz", info: "\(332.24)", image: #imageLiteral(resourceName: "icon_contactbook")),
-                                     TargetInfo(name: "Deniz", info: "\(332.24)", image: #imageLiteral(resourceName: "icon_contactbook")),
+                                     TargetInfo(name: "Nick", info: "\(332.24)", image: #imageLiteral(resourceName: "icon_contactbook")),
+                                     TargetInfo(name: "Levis", info: "\(332.24)", image: #imageLiteral(resourceName: "icon_contactbook")),
+                                     TargetInfo(name: "Michael", info: "\(332.24)", image: #imageLiteral(resourceName: "icon_contactbook")),
+                                     TargetInfo(name: "Sam", info: "\(332.24)", image: #imageLiteral(resourceName: "icon_contactbook")),
                                      TargetInfo(name: "Deniz", info: "\(332.24)", image: #imageLiteral(resourceName: "icon_contactbook"))]
     
     
@@ -31,7 +31,7 @@ class BounceAnimationViewController: UIViewController, BounceAnimationDelegate{
     @objc func popBack(){
         self.navigationController?.popViewController(animated: true)
     }
-    
+    var isActive = false
     var fadeInDuration: TimeInterval = 1
     var delegate: BounceAnimationDelegate!
     
@@ -170,15 +170,20 @@ class BounceAnimationViewController: UIViewController, BounceAnimationDelegate{
     func bounceAnimation(_ controller: BounceAnimationController, nodeTapped node: Node) {
         print(node.description)
     }
+    
     func bounceAnimation(_ controller: BounceAnimationController, launchedWithVelocity velocity: CGPoint, from point: CGPoint) {
+        self.isActive = true
         print("Action Node launched with velocity: \(velocity) from: \(point) ")
-        DispatchQueue.main.asyncAfter(deadline: .now() + 2) {
+        DispatchQueue.main.asyncAfter(deadline: .now() + 10) {
+            self.isActive = false
             self.showResultView(duration: 1, completion: {
                 print("Done")
             })
         }
     }
+    
+    func bounceAnimation(_ controller: BounceAnimationController, actionNode: Node, collidedTo targetNode: Node, with behaivor: UICollisionBehavior, at point: CGPoint) {
+        guard isActive else {return}
+        targetNode.increaseCollisionCount()
+    }
 }
-
-
-

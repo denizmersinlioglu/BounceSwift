@@ -9,7 +9,7 @@ import UIKit
 import CoreMotion
 
 @available(iOS 9.0, *)
-public class BounceAnimationController: UIViewController {
+class BounceAnimationController: UIViewController {
     
     init(colorScheme: ColorScheme, targetInfo: [TargetInfo], delegate: BounceAnimationDelegate, actionNodeTitle: String, transactionSummary: NSAttributedString, transactionDescription: NSAttributedString) {
         self.colorScheme = colorScheme
@@ -21,7 +21,7 @@ public class BounceAnimationController: UIViewController {
         super.init(nibName: nil, bundle: nil)
     }
     
-    required public init?(coder aDecoder: NSCoder) {
+    required init?(coder aDecoder: NSCoder) {
         super.init(coder: aDecoder)
     }
     
@@ -52,10 +52,12 @@ public class BounceAnimationController: UIViewController {
     private var dynamicItemBehaivor: UIDynamicItemBehavior!
     private var targetNodes = [Node](){
         didSet{
-            targetNodes.forEach {
-                $0.addTapGesture(delegate: self)
-                collisionBehaivors.append($0.addCollisionBehaivor(to: [actionNode], delegate: self))
-                view.addSubview($0)
+            targetNodes.forEach { node in
+                node.addTapGesture(delegate: self)
+                let otherNodes = targetNodes.filter{node != $0}
+                collisionBehaivors.append(node.addCollisionBehaivor(to: [actionNode], delegate: self))
+                collisionBehaivors.append(node.addCollisionBehaivor(to: otherNodes, delegate: self))
+                view.addSubview(node)
             }
         }
     }
@@ -95,7 +97,7 @@ public class BounceAnimationController: UIViewController {
     }()
     
     // MARK: - Life Cycle
-    override public func loadView() {
+    override func loadView() {
         super.loadView()
         screenWidth = view.bounds.width
         actionNode.setLabelText(text: actionNodeTitle)
@@ -132,7 +134,7 @@ public class BounceAnimationController: UIViewController {
         displayLink.isPaused = true
     }
     
-    override public func viewDidLoad() {
+    override func viewDidLoad() {
         super.viewDidLoad()
         let manager = NodeManager(targetInfo: targetInfo, colorScheme: colorScheme)
         targetNodes = manager.createtargetNodes()
@@ -148,7 +150,7 @@ public class BounceAnimationController: UIViewController {
         shapeLayer.fillColor = colorScheme.foregroundFillColor.cgColor
     }
     
-    override public func viewWillDisappear(_ animated: Bool) {
+    override func viewWillDisappear(_ animated: Bool) {
         super.viewWillDisappear(animated)
         motionManager.stopAccelerometerUpdates()
         displayLink.isPaused = true
@@ -263,7 +265,7 @@ public class BounceAnimationController: UIViewController {
         }
     }
     
-    public func simulateResultAnimation(completion: @escaping () -> ()){
+    func simulateResultAnimation(completion: @escaping () -> ()){
         simulateResultPhysics()
         animating = true
         UIView.animate(withDuration: 2, delay: 0.0, usingSpringWithDamping: 1, initialSpringVelocity: 0.0, options: [], animations: { () -> Void in
@@ -292,20 +294,6 @@ public class BounceAnimationController: UIViewController {
     
     // MARK: Physics Methods
     func simulateLaunchPhysics(velocity: CGPoint){
-        for collision in collisionBehaivors {
-            animator!.addBehavior(collision)
-        }
-        dynamicItemBehaivor.addLinearVelocity(velocity, for: self.actionNode)
-        dynamicItemBehaivor.angularResistance = 0
-        dynamicItemBehaivor.resistance = 0
-        dynamicItemBehaivor.elasticity = 1
-        animator!.addBehavior(dynamicItemBehaivor)
-    }
-    
-    func simulateResultPhysics(){
-        animator!.addBehavior(self.gravity)
-        dynamicItemBehaivor.elasticity = 0.5
-        
         motionManager.startAccelerometerUpdates(to: OperationQueue.main) { (data, err) in
             if let err = err{
                 print(err)
@@ -313,43 +301,55 @@ public class BounceAnimationController: UIViewController {
             }
             guard let xValue = data?.acceleration.x, let yValue = data?.acceleration.y else {return}
             self.gravity.gravityDirection = CGVector(dx: xValue, dy: -yValue)
-            self.gravity.magnitude = 1
         }
+        gravity.magnitude = 0.9
+        animator!.addBehavior(gravity)
+        for collision in collisionBehaivors {
+            animator!.addBehavior(collision)
+        }
+        dynamicItemBehaivor.addLinearVelocity(velocity, for: self.actionNode)
+        dynamicItemBehaivor.angularResistance = 0
+        dynamicItemBehaivor.resistance = 0
+        dynamicItemBehaivor.allowsRotation = true
+        dynamicItemBehaivor.elasticity = 0.8
+        animator!.addBehavior(dynamicItemBehaivor)
+    }
+    
+    func simulateResultPhysics(){
+        dynamicItemBehaivor.elasticity = 0.5
+        
     }
 }
 
 @available(iOS 9.0, *)
 extension BounceAnimationController: UICollisionBehaviorDelegate{
-    public func collisionBehavior(_ behavior: UICollisionBehavior, beganContactFor item1: UIDynamicItem, with item2: UIDynamicItem, at p: CGPoint) {
+    func collisionBehavior(_ behavior: UICollisionBehavior, beganContactFor item1: UIDynamicItem, with item2: UIDynamicItem, at p: CGPoint) {
         guard let node1 = item1 as? Node, let node2 = item2 as? Node else {return}
         
         if node1.type != .action || node2.type != .action {
              bounceAnimationDelegate.bounceAnimation(self, targetNode: node1, collidedTo: node2, with: behavior, at: p)
         }
         if node1.type == .action || node2.type == .action {
+            if hitCount == 0 {
+                for targetNode in self.targetNodes where targetNode.type != .action {
+                    hitCount += 1
+                    targetNode.addLabel(text: "\(0)", font: UIFont.boldSystemFont(ofSize: 18))
+                }
+            }
             // Delegate Methods
             if node1.type == .action {
                 bounceAnimationDelegate.bounceAnimation(self, actionNode: node1, collidedTo: node2, with: behavior, at: p)
             }else{
                 bounceAnimationDelegate.bounceAnimation(self, actionNode: node2, collidedTo: node1, with: behavior, at: p)
             }
-            for targetNode in self.targetNodes{
-                behavior.addItem(targetNode)
-            }
-            guard hitCount == 0 else {return}
-            for (index,targetNode) in self.targetNodes.enumerated() where targetNode.type != .action {
-                hitCount += 1
-                if targetNode.type == .target {
-                    targetNode.addLabel(text: targetInfo[index].info, font: UIFont.boldSystemFont(ofSize: 20))
-                }
-            }
+            
         }
     }
 }
 
 @available(iOS 9.0, *)
 extension BounceAnimationController: NodeDelegate{
-    public func nodeTapped(to node: Node) {
+    func nodeTapped(to node: Node) {
         bounceAnimationDelegate.bounceAnimation(self, nodeTapped: node)
     }
 }
