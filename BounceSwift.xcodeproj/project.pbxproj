@@ -8,20 +8,60 @@
 
 /* Begin PBXBuildFile section */
 		405ECFCA21AB3B6C00F4721A /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 405ECFC921AB3B6C00F4721A /* AppDelegate.swift */; };
-		405ECFCC21AB3B6C00F4721A /* ViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 405ECFCB21AB3B6C00F4721A /* ViewController.swift */; };
 		405ECFCF21AB3B6C00F4721A /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 405ECFCD21AB3B6C00F4721A /* Main.storyboard */; };
 		405ECFD121AB3B6E00F4721A /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 405ECFD021AB3B6E00F4721A /* Assets.xcassets */; };
 		405ECFD421AB3B6E00F4721A /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 405ECFD221AB3B6E00F4721A /* LaunchScreen.storyboard */; };
+		405ECFF821AB3BE600F4721A /* BounceAnimationDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 405ECFDD21AB3BE600F4721A /* BounceAnimationDelegate.swift */; };
+		405ECFFA21AB3BE600F4721A /* ColorScheme.swift in Sources */ = {isa = PBXBuildFile; fileRef = 405ECFE021AB3BE600F4721A /* ColorScheme.swift */; };
+		405ECFFB21AB3BE600F4721A /* BounceAnimationExtensions.swift in Sources */ = {isa = PBXBuildFile; fileRef = 405ECFE221AB3BE600F4721A /* BounceAnimationExtensions.swift */; };
+		405ECFFC21AB3BE600F4721A /* BounceAnimationConstants.swift in Sources */ = {isa = PBXBuildFile; fileRef = 405ECFE321AB3BE600F4721A /* BounceAnimationConstants.swift */; };
+		405ECFFD21AB3BE600F4721A /* TargetListCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 405ECFE521AB3BE600F4721A /* TargetListCell.swift */; };
+		405ECFFE21AB3BE600F4721A /* Node.swift in Sources */ = {isa = PBXBuildFile; fileRef = 405ECFE621AB3BE600F4721A /* Node.swift */; };
+		405ECFFF21AB3BE600F4721A /* NodeUtils.swift in Sources */ = {isa = PBXBuildFile; fileRef = 405ECFE721AB3BE600F4721A /* NodeUtils.swift */; };
+		405ED00021AB3BE600F4721A /* BounceAnimationViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 405ECFE921AB3BE600F4721A /* BounceAnimationViewController.swift */; };
+		405ED00121AB3BE600F4721A /* BounceAnimationController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 405ECFEA21AB3BE600F4721A /* BounceAnimationController.swift */; };
+		405ED00221AB3BE600F4721A /* TargetListViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 405ECFEB21AB3BE600F4721A /* TargetListViewController.swift */; };
+		405ED00321AB3BE600F4721A /* AllocationLine.swift in Sources */ = {isa = PBXBuildFile; fileRef = 405ECFED21AB3BE600F4721A /* AllocationLine.swift */; };
+		405ED00421AB3BE600F4721A /* NodeAllocationType.swift in Sources */ = {isa = PBXBuildFile; fileRef = 405ECFEE21AB3BE600F4721A /* NodeAllocationType.swift */; };
+		405ED00621AB3BE600F4721A /* MitchellPointGenerator.swift in Sources */ = {isa = PBXBuildFile; fileRef = 405ECFF221AB3BE600F4721A /* MitchellPointGenerator.swift */; };
+		405ED00721AB3BE600F4721A /* SunFlowerPointGenerator.swift in Sources */ = {isa = PBXBuildFile; fileRef = 405ECFF321AB3BE600F4721A /* SunFlowerPointGenerator.swift */; };
+		405ED00821AB3BE600F4721A /* RandomPointGenerator.swift in Sources */ = {isa = PBXBuildFile; fileRef = 405ECFF421AB3BE600F4721A /* RandomPointGenerator.swift */; };
+		405ED00921AB3BE600F4721A /* VogelPointGenerator.swift in Sources */ = {isa = PBXBuildFile; fileRef = 405ECFF521AB3BE600F4721A /* VogelPointGenerator.swift */; };
+		405ED00A21AB3BE600F4721A /* PointGenerator.swift in Sources */ = {isa = PBXBuildFile; fileRef = 405ECFF621AB3BE600F4721A /* PointGenerator.swift */; };
+		405ED00B21AB3BE600F4721A /* NodeManager.swift in Sources */ = {isa = PBXBuildFile; fileRef = 405ECFF721AB3BE600F4721A /* NodeManager.swift */; };
+		405ED00D21AB3CC000F4721A /* UIColor.swift in Sources */ = {isa = PBXBuildFile; fileRef = 405ED00C21AB3CC000F4721A /* UIColor.swift */; };
+		EF52ADE4861029EE99B9DA21 /* Pods_BounceSwift.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 69A6901CAE211DF8BD3A7DE0 /* Pods_BounceSwift.framework */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
+		0051498C1C226E3A17498BDB /* Pods-BounceSwift.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-BounceSwift.debug.xcconfig"; path = "Pods/Target Support Files/Pods-BounceSwift/Pods-BounceSwift.debug.xcconfig"; sourceTree = "<group>"; };
 		405ECFC621AB3B6C00F4721A /* BounceSwift.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = BounceSwift.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		405ECFC921AB3B6C00F4721A /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
-		405ECFCB21AB3B6C00F4721A /* ViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ViewController.swift; sourceTree = "<group>"; };
 		405ECFCE21AB3B6C00F4721A /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/Main.storyboard; sourceTree = "<group>"; };
 		405ECFD021AB3B6E00F4721A /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Assets.xcassets; sourceTree = "<group>"; };
 		405ECFD321AB3B6E00F4721A /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/LaunchScreen.storyboard; sourceTree = "<group>"; };
 		405ECFD521AB3B6E00F4721A /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
+		405ECFDD21AB3BE600F4721A /* BounceAnimationDelegate.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = BounceAnimationDelegate.swift; sourceTree = "<group>"; };
+		405ECFE021AB3BE600F4721A /* ColorScheme.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = ColorScheme.swift; sourceTree = "<group>"; };
+		405ECFE221AB3BE600F4721A /* BounceAnimationExtensions.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = BounceAnimationExtensions.swift; sourceTree = "<group>"; };
+		405ECFE321AB3BE600F4721A /* BounceAnimationConstants.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = BounceAnimationConstants.swift; sourceTree = "<group>"; };
+		405ECFE521AB3BE600F4721A /* TargetListCell.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = TargetListCell.swift; sourceTree = "<group>"; };
+		405ECFE621AB3BE600F4721A /* Node.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = Node.swift; sourceTree = "<group>"; };
+		405ECFE721AB3BE600F4721A /* NodeUtils.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = NodeUtils.swift; sourceTree = "<group>"; };
+		405ECFE921AB3BE600F4721A /* BounceAnimationViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = BounceAnimationViewController.swift; sourceTree = "<group>"; };
+		405ECFEA21AB3BE600F4721A /* BounceAnimationController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = BounceAnimationController.swift; sourceTree = "<group>"; };
+		405ECFEB21AB3BE600F4721A /* TargetListViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = TargetListViewController.swift; sourceTree = "<group>"; };
+		405ECFED21AB3BE600F4721A /* AllocationLine.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = AllocationLine.swift; sourceTree = "<group>"; };
+		405ECFEE21AB3BE600F4721A /* NodeAllocationType.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = NodeAllocationType.swift; sourceTree = "<group>"; };
+		405ECFF221AB3BE600F4721A /* MitchellPointGenerator.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = MitchellPointGenerator.swift; sourceTree = "<group>"; };
+		405ECFF321AB3BE600F4721A /* SunFlowerPointGenerator.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = SunFlowerPointGenerator.swift; sourceTree = "<group>"; };
+		405ECFF421AB3BE600F4721A /* RandomPointGenerator.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = RandomPointGenerator.swift; sourceTree = "<group>"; };
+		405ECFF521AB3BE600F4721A /* VogelPointGenerator.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = VogelPointGenerator.swift; sourceTree = "<group>"; };
+		405ECFF621AB3BE600F4721A /* PointGenerator.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = PointGenerator.swift; sourceTree = "<group>"; };
+		405ECFF721AB3BE600F4721A /* NodeManager.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = NodeManager.swift; sourceTree = "<group>"; };
+		405ED00C21AB3CC000F4721A /* UIColor.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = UIColor.swift; sourceTree = "<group>"; };
+		69A6901CAE211DF8BD3A7DE0 /* Pods_BounceSwift.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods_BounceSwift.framework; sourceTree = BUILT_PRODUCTS_DIR; };
+		9BC4045B0C32D6FAFDEE71EA /* Pods-BounceSwift.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-BounceSwift.release.xcconfig"; path = "Pods/Target Support Files/Pods-BounceSwift/Pods-BounceSwift.release.xcconfig"; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -29,6 +69,7 @@
 			isa = PBXFrameworksBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				EF52ADE4861029EE99B9DA21 /* Pods_BounceSwift.framework in Frameworks */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -40,6 +81,8 @@
 			children = (
 				405ECFC821AB3B6C00F4721A /* BounceSwift */,
 				405ECFC721AB3B6C00F4721A /* Products */,
+				6845FFA93285B3F2DDDD64F6 /* Pods */,
+				ED6259B51931E9786D892EF9 /* Frameworks */,
 			);
 			sourceTree = "<group>";
 		};
@@ -54,14 +97,113 @@
 		405ECFC821AB3B6C00F4721A /* BounceSwift */ = {
 			isa = PBXGroup;
 			children = (
+				405ECFDB21AB3B9F00F4721A /* BounceAnimation */,
 				405ECFC921AB3B6C00F4721A /* AppDelegate.swift */,
-				405ECFCB21AB3B6C00F4721A /* ViewController.swift */,
+				405ED00C21AB3CC000F4721A /* UIColor.swift */,
+				405ECFE921AB3BE600F4721A /* BounceAnimationViewController.swift */,
 				405ECFCD21AB3B6C00F4721A /* Main.storyboard */,
 				405ECFD021AB3B6E00F4721A /* Assets.xcassets */,
 				405ECFD221AB3B6E00F4721A /* LaunchScreen.storyboard */,
 				405ECFD521AB3B6E00F4721A /* Info.plist */,
 			);
 			path = BounceSwift;
+			sourceTree = "<group>";
+		};
+		405ECFDB21AB3B9F00F4721A /* BounceAnimation */ = {
+			isa = PBXGroup;
+			children = (
+				405ECFEC21AB3BE600F4721A /* Allocation */,
+				405ECFE421AB3BE600F4721A /* Components */,
+				405ECFE821AB3BE600F4721A /* Controllers */,
+				405ECFDF21AB3BE600F4721A /* Models */,
+				405ECFDC21AB3BE600F4721A /* Protocols */,
+				405ECFE121AB3BE600F4721A /* SupportingFiles */,
+			);
+			path = BounceAnimation;
+			sourceTree = "<group>";
+		};
+		405ECFDC21AB3BE600F4721A /* Protocols */ = {
+			isa = PBXGroup;
+			children = (
+				405ECFDD21AB3BE600F4721A /* BounceAnimationDelegate.swift */,
+			);
+			path = Protocols;
+			sourceTree = "<group>";
+		};
+		405ECFDF21AB3BE600F4721A /* Models */ = {
+			isa = PBXGroup;
+			children = (
+				405ECFE021AB3BE600F4721A /* ColorScheme.swift */,
+			);
+			path = Models;
+			sourceTree = "<group>";
+		};
+		405ECFE121AB3BE600F4721A /* SupportingFiles */ = {
+			isa = PBXGroup;
+			children = (
+				405ECFE221AB3BE600F4721A /* BounceAnimationExtensions.swift */,
+				405ECFE321AB3BE600F4721A /* BounceAnimationConstants.swift */,
+			);
+			path = SupportingFiles;
+			sourceTree = "<group>";
+		};
+		405ECFE421AB3BE600F4721A /* Components */ = {
+			isa = PBXGroup;
+			children = (
+				405ECFE521AB3BE600F4721A /* TargetListCell.swift */,
+				405ECFE621AB3BE600F4721A /* Node.swift */,
+				405ECFE721AB3BE600F4721A /* NodeUtils.swift */,
+			);
+			path = Components;
+			sourceTree = "<group>";
+		};
+		405ECFE821AB3BE600F4721A /* Controllers */ = {
+			isa = PBXGroup;
+			children = (
+				405ECFEA21AB3BE600F4721A /* BounceAnimationController.swift */,
+				405ECFEB21AB3BE600F4721A /* TargetListViewController.swift */,
+			);
+			path = Controllers;
+			sourceTree = "<group>";
+		};
+		405ECFEC21AB3BE600F4721A /* Allocation */ = {
+			isa = PBXGroup;
+			children = (
+				405ECFF721AB3BE600F4721A /* NodeManager.swift */,
+				405ECFED21AB3BE600F4721A /* AllocationLine.swift */,
+				405ECFEE21AB3BE600F4721A /* NodeAllocationType.swift */,
+				405ECFF121AB3BE600F4721A /* PointGenerators */,
+			);
+			path = Allocation;
+			sourceTree = "<group>";
+		};
+		405ECFF121AB3BE600F4721A /* PointGenerators */ = {
+			isa = PBXGroup;
+			children = (
+				405ECFF221AB3BE600F4721A /* MitchellPointGenerator.swift */,
+				405ECFF321AB3BE600F4721A /* SunFlowerPointGenerator.swift */,
+				405ECFF421AB3BE600F4721A /* RandomPointGenerator.swift */,
+				405ECFF521AB3BE600F4721A /* VogelPointGenerator.swift */,
+				405ECFF621AB3BE600F4721A /* PointGenerator.swift */,
+			);
+			path = PointGenerators;
+			sourceTree = "<group>";
+		};
+		6845FFA93285B3F2DDDD64F6 /* Pods */ = {
+			isa = PBXGroup;
+			children = (
+				0051498C1C226E3A17498BDB /* Pods-BounceSwift.debug.xcconfig */,
+				9BC4045B0C32D6FAFDEE71EA /* Pods-BounceSwift.release.xcconfig */,
+			);
+			name = Pods;
+			sourceTree = "<group>";
+		};
+		ED6259B51931E9786D892EF9 /* Frameworks */ = {
+			isa = PBXGroup;
+			children = (
+				69A6901CAE211DF8BD3A7DE0 /* Pods_BounceSwift.framework */,
+			);
+			name = Frameworks;
 			sourceTree = "<group>";
 		};
 /* End PBXGroup section */
@@ -71,9 +213,11 @@
 			isa = PBXNativeTarget;
 			buildConfigurationList = 405ECFD821AB3B6E00F4721A /* Build configuration list for PBXNativeTarget "BounceSwift" */;
 			buildPhases = (
+				2B10C58A5E1D3AD474C3FD5D /* [CP] Check Pods Manifest.lock */,
 				405ECFC221AB3B6C00F4721A /* Sources */,
 				405ECFC321AB3B6C00F4721A /* Frameworks */,
 				405ECFC421AB3B6C00F4721A /* Resources */,
+				B75B64740995D76A12A8D25E /* [CP] Embed Pods Frameworks */,
 			);
 			buildRules = (
 			);
@@ -130,13 +274,80 @@
 		};
 /* End PBXResourcesBuildPhase section */
 
+/* Begin PBXShellScriptBuildPhase section */
+		2B10C58A5E1D3AD474C3FD5D /* [CP] Check Pods Manifest.lock */ = {
+			isa = PBXShellScriptBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			inputFileListPaths = (
+			);
+			inputPaths = (
+				"${PODS_PODFILE_DIR_PATH}/Podfile.lock",
+				"${PODS_ROOT}/Manifest.lock",
+			);
+			name = "[CP] Check Pods Manifest.lock";
+			outputFileListPaths = (
+			);
+			outputPaths = (
+				"$(DERIVED_FILE_DIR)/Pods-BounceSwift-checkManifestLockResult.txt",
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+			shellPath = /bin/sh;
+			shellScript = "diff \"${PODS_PODFILE_DIR_PATH}/Podfile.lock\" \"${PODS_ROOT}/Manifest.lock\" > /dev/null\nif [ $? != 0 ] ; then\n    # print error to STDERR\n    echo \"error: The sandbox is not in sync with the Podfile.lock. Run 'pod install' or update your CocoaPods installation.\" >&2\n    exit 1\nfi\n# This output is used by Xcode 'outputs' to avoid re-running this script phase.\necho \"SUCCESS\" > \"${SCRIPT_OUTPUT_FILE_0}\"\n";
+			showEnvVarsInLog = 0;
+		};
+		B75B64740995D76A12A8D25E /* [CP] Embed Pods Frameworks */ = {
+			isa = PBXShellScriptBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			inputFileListPaths = (
+			);
+			inputPaths = (
+				"${SRCROOT}/Pods/Target Support Files/Pods-BounceSwift/Pods-BounceSwift-frameworks.sh",
+				"${BUILT_PRODUCTS_DIR}/Alamofire/Alamofire.framework",
+				"${BUILT_PRODUCTS_DIR}/AlamofireImage/AlamofireImage.framework",
+			);
+			name = "[CP] Embed Pods Frameworks";
+			outputFileListPaths = (
+			);
+			outputPaths = (
+				"${TARGET_BUILD_DIR}/${FRAMEWORKS_FOLDER_PATH}/Alamofire.framework",
+				"${TARGET_BUILD_DIR}/${FRAMEWORKS_FOLDER_PATH}/AlamofireImage.framework",
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+			shellPath = /bin/sh;
+			shellScript = "\"${SRCROOT}/Pods/Target Support Files/Pods-BounceSwift/Pods-BounceSwift-frameworks.sh\"\n";
+			showEnvVarsInLog = 0;
+		};
+/* End PBXShellScriptBuildPhase section */
+
 /* Begin PBXSourcesBuildPhase section */
 		405ECFC221AB3B6C00F4721A /* Sources */ = {
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
-				405ECFCC21AB3B6C00F4721A /* ViewController.swift in Sources */,
+				405ECFFB21AB3BE600F4721A /* BounceAnimationExtensions.swift in Sources */,
+				405ED00A21AB3BE600F4721A /* PointGenerator.swift in Sources */,
+				405ECFFD21AB3BE600F4721A /* TargetListCell.swift in Sources */,
+				405ECFFE21AB3BE600F4721A /* Node.swift in Sources */,
+				405ECFFC21AB3BE600F4721A /* BounceAnimationConstants.swift in Sources */,
+				405ED00821AB3BE600F4721A /* RandomPointGenerator.swift in Sources */,
+				405ED00721AB3BE600F4721A /* SunFlowerPointGenerator.swift in Sources */,
+				405ECFFA21AB3BE600F4721A /* ColorScheme.swift in Sources */,
+				405ED00D21AB3CC000F4721A /* UIColor.swift in Sources */,
 				405ECFCA21AB3B6C00F4721A /* AppDelegate.swift in Sources */,
+				405ED00221AB3BE600F4721A /* TargetListViewController.swift in Sources */,
+				405ED00621AB3BE600F4721A /* MitchellPointGenerator.swift in Sources */,
+				405ECFF821AB3BE600F4721A /* BounceAnimationDelegate.swift in Sources */,
+				405ED00921AB3BE600F4721A /* VogelPointGenerator.swift in Sources */,
+				405ECFFF21AB3BE600F4721A /* NodeUtils.swift in Sources */,
+				405ED00321AB3BE600F4721A /* AllocationLine.swift in Sources */,
+				405ED00421AB3BE600F4721A /* NodeAllocationType.swift in Sources */,
+				405ED00B21AB3BE600F4721A /* NodeManager.swift in Sources */,
+				405ED00121AB3BE600F4721A /* BounceAnimationController.swift in Sources */,
+				405ED00021AB3BE600F4721A /* BounceAnimationViewController.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -280,6 +491,7 @@
 		};
 		405ECFD921AB3B6E00F4721A /* Debug */ = {
 			isa = XCBuildConfiguration;
+			baseConfigurationReference = 0051498C1C226E3A17498BDB /* Pods-BounceSwift.debug.xcconfig */;
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
 				CODE_SIGN_STYLE = Automatic;
@@ -298,6 +510,7 @@
 		};
 		405ECFDA21AB3B6E00F4721A /* Release */ = {
 			isa = XCBuildConfiguration;
+			baseConfigurationReference = 9BC4045B0C32D6FAFDEE71EA /* Pods-BounceSwift.release.xcconfig */;
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
 				CODE_SIGN_STYLE = Automatic;

@@ -1,0 +1,71 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<Bucket
+   type = "0"
+   version = "2.0">
+   <Breakpoints>
+      <BreakpointProxy
+         BreakpointExtensionID = "Xcode.Breakpoint.FileBreakpoint">
+         <BreakpointContent
+            shouldBeEnabled = "Yes"
+            ignoreCount = "0"
+            continueAfterRunningActions = "No"
+            filePath = "BounceSwift/BounceAnimation/Allocation/PointGenerators/VogelPointGenerator.swift"
+            timestampString = "564878370.566017"
+            startingColumnNumber = "9223372036854775807"
+            endingColumnNumber = "9223372036854775807"
+            startingLineNumber = "32"
+            endingLineNumber = "32"
+            landmarkName = "generatePoints(numPoints:maxWidth:maxLength:)"
+            landmarkType = "7">
+         </BreakpointContent>
+      </BreakpointProxy>
+      <BreakpointProxy
+         BreakpointExtensionID = "Xcode.Breakpoint.FileBreakpoint">
+         <BreakpointContent
+            shouldBeEnabled = "Yes"
+            ignoreCount = "0"
+            continueAfterRunningActions = "No"
+            filePath = "BounceSwift/BounceAnimation/Allocation/NodeManager.swift"
+            timestampString = "564878370.566115"
+            startingColumnNumber = "9223372036854775807"
+            endingColumnNumber = "9223372036854775807"
+            startingLineNumber = "26"
+            endingLineNumber = "26"
+            landmarkName = "createtargetNodes()"
+            landmarkType = "7">
+            <Locations>
+               <Location
+                  shouldBeEnabled = "Yes"
+                  ignoreCount = "0"
+                  continueAfterRunningActions = "No"
+                  symbolName = "BounceSwift.NodeManager.createtargetNodes() -&gt; Swift.Array&lt;BounceSwift.Node&gt;"
+                  moduleName = "BounceSwift"
+                  usesParentBreakpointCondition = "Yes"
+                  urlString = "file:///Users/DenizMersinlioglu/Desktop/BounceSwift/BounceSwift/BounceAnimation/Allocation/NodeManager.swift"
+                  timestampString = "564878193.674015"
+                  startingColumnNumber = "9223372036854775807"
+                  endingColumnNumber = "9223372036854775807"
+                  startingLineNumber = "26"
+                  endingLineNumber = "26"
+                  offsetFromSymbolStart = "340">
+               </Location>
+               <Location
+                  shouldBeEnabled = "Yes"
+                  ignoreCount = "0"
+                  continueAfterRunningActions = "No"
+                  symbolName = "closure #1 ((offset: Swift.Int, element: BounceSwift.TargetInfo)) -&gt; BounceSwift.Node in BounceSwift.NodeManager.createtargetNodes() -&gt; Swift.Array&lt;BounceSwift.Node&gt;"
+                  moduleName = "BounceSwift"
+                  usesParentBreakpointCondition = "Yes"
+                  urlString = "file:///Users/DenizMersinlioglu/Desktop/BounceSwift/BounceSwift/BounceAnimation/Allocation/NodeManager.swift"
+                  timestampString = "564878193.676391"
+                  startingColumnNumber = "9223372036854775807"
+                  endingColumnNumber = "9223372036854775807"
+                  startingLineNumber = "27"
+                  endingLineNumber = "27"
+                  offsetFromSymbolStart = "140">
+               </Location>
+            </Locations>
+         </BreakpointContent>
+      </BreakpointProxy>
+   </Breakpoints>
+</Bucket>
